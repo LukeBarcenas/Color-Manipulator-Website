@@ -1,0 +1,493 @@
+/* Base Styles */
+body {
+    background-color: #fafafa;
+    color: #1d1d1d;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+p {
+    font-size: larger;
+    margin: auto 75px 20px 75px;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 20px 0 10px 0;
+}
+
+.luke-externals {
+    height: 150px;
+}
+
+nav {
+    background-color: #e7e7e7;
+    color: #2a2a2a;
+    padding: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid;
+}
+
+hr {
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-height: 100vh;
+}
+
+.text-aligner {
+    text-align: center;
+    padding: 1em;
+    max-width: 600px;
+    margin: auto;
+}
+
+.centered-title {
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    color: #333333;
+    margin: 0;
+}
+
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    padding: 1em;
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .text-aligner {
+        padding: 0.5em;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#randomize-colors-toggle, #night-mode-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#dice-icon, #mode-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.links {
+    display: flex;
+    column-gap: 0;
+    color: #2a2a2a;
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
+}
+
+.icon-wrapper {
+    border-radius: 25%;
+    padding: -5px;
+    margin-right: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+#mail-icon {
+    margin-right: 0px;
+}
+
+.links a {
+    height: auto;
+    color: #2a2a2a;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.links a:hover {
+    background-color: #d0d0d0;
+    border-radius: 5px;
+}
+
+#night-mode-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#mode-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.secret-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    text-align: center;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Color Info Styles */
+.color-info {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.color-info h2 {
+    margin: 10px 0 2px 0;
+}
+
+.color-info h3 {
+    margin: 0 0 15px 0;
+}
+
+.info-static-left {
+    border: 1px solid #000;
+}
+
+.info-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.info-column {
+    margin: 0 10px;
+    text-align: left;
+}
+
+.info-column h3 {
+    margin: 5px 0;
+    text-align: left;
+}
+
+/* swapped Colors Styles */
+.swapped-colors {
+    flex: 1;
+    padding: 10px;
+}
+
+.swapped-colors h2 {
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.color-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.swapped-color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #000;
+}
+
+.summary-h3 {
+    margin: 25px 0 5px 0;
+}
+
+/* Color Picker Styles */
+.color-picker {
+    flex: 1;
+    text-align: center;
+}
+
+.color-square {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border: 2px solid #000;
+}
+
+.slider {
+    margin: 10px 0;
+}
+
+.hex-code {
+    font-weight: normal;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+/* Swapped Colors Styles */
+.swapped-colors {
+    flex: 1;
+    padding: 10px;
+}
+
+.swapped-colors h2 {
+    text-align: center;
+    margin: 10px 0 2px 0;
+}
+
+.color-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.swapped-color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+    border: 2px solid #000;
+}
+
+/* Randomize Styles */
+#randomize-colors-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#dice-icon {
+    width: 34px;
+    height: 34px;
+}
+
+/* Night Mode styles */
+.night-mode {
+    background-color: #212121;
+    color: #dddddd;
+}
+
+.night-mode nav {
+    background-color: #181818;
+    color: #dddddd;
+}
+
+.night-mode .links a {
+    color: #dddddd;
+    background-color: transparent;
+}
+
+.night-mode .links a:hover {
+    background-color: #252525;
+}
+
+.night-mode #colorful-name span#by {
+    -webkit-text-stroke: 1px black; 
+}
+
+
+/* Game Styles */
+#name-entry {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#user-name {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#start-game {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#game-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#restart-game, #return-to-name {
+    margin-top: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#user-name {
+    margin: 5px 0 5px 0;
+}
+
+.color-boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    row-gap: 0px;
+}
+
+.color-option-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-option {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+}
+
+.hex-code {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0;
+}
+
+.small-hex {
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+#user-color {
+    margin-bottom: 5px;
+}
+
+.color-option + .hex-code {
+    margin: 3px 5px 3px 5px;
+}
+
+#score {
+    font-size: xx-large;
+}
+
+#game-p {
+    margin: auto 85px 20px 85px;
+}
+
+/* About Page Styles */
+#colorful-name span {
+    font-weight: bold;
+    font-size: 50px;
+    -webkit-text-stroke: 1px black;
+}
+
+#colorful-name {
+    margin-top: 30px;
+}
+
+#by h3 {
+    font-weight: 500;
+    -webkit-text-stroke: none;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 846px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .color-info {
+        order: 3;
+    }
+
+    .color-picker {
+        order: 1;
+    }
+
+    .swapped-colors {
+        order: 2;
+    }
+
+    p {
+        margin: auto 10px 20px 10px;
+    }
+
+    #game-p {
+        margin: auto 15px 20px 15px;
+    }
+
+    #start-game {
+        margin-left: 0;
+    }
+
+    #return-to-name {
+        margin-top: 5px;
+    }
+
+    .summary-h3 {
+        margin-top: 5px;
+    }
+
+
+}
+
+/* Adjustments for phone screens */
+@media (max-width: 435px) {
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%; 
+        max-width: 400px;
+        gap: 1em;
+        margin: 0 auto;
+    }
+    
+    .links a {
+        flex: 1 1 45%; 
+        box-sizing: border-box;
+        color: #2a2a2a;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        text-align: center;
+    }
+    
+    .links a:hover {
+        background-color: #d0d0d0;
+        border-radius: 5px;
+    }
+    
+}

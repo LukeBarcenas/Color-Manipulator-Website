@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Color Manipulator</title>
+    <meta name="description" content="A website that lets you manipulate colors">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar">
+            <div class="links">
+                <a href="#home" data-section="home">Home</a>
+                <a href="#game" data-section="game">Game</a>
+                <a href="#about" data-section="about">About</a>
+                <a href="#contact" data-section="contact">Contact</a>
+            </div>
+            <div class="icon-buttons">
+                <button id="randomize-colors-toggle">
+                    <img id="dice-icon" src="images/dice-dark.png" alt="Randomize Colors">
+                </button>
+                <button id="night-mode-toggle">
+                    <img id="mode-icon" src="images/moon-dark.png" alt="Toggle Night Mode">
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div id="home" class="section active">
+            <h3>Welcome to the Color Manipulator</h3>
+            <p>Here, you can change the color of the site and see various pieces of 
+                information based on the color you make. From percentage information 
+                to color channel swapping, learn more about colors today!</p>
+
+            <div class="main-content">
+
+                <!-- Color Information Section -->
+                <div class="color-info">
+                    <h2>Color Info:</h2>
+                    <hr class="colored-hr">
+                    <div class="info-row">
+                        <div class="info-column">
+                            <h3>Red:</h3>
+                            <h3>Green:</h3>
+                            <h3>Blue:</h3>
+                        </div>
+                        <div class="info-column" id="percentages">
+                            <h3 id="red-percent" class="left-align">0.0%</h3>
+                            <h3 id="green-percent" class="left-align">0.0%</h3>
+                            <h3 id="blue-percent" class="left-align">0.0%</h3>
+                        </div>
+                    </div>
+                    <hr class="colored-hr">
+                    <h2>Hex:</h2>
+                    <h3 id="hex-value">#000000</h3>
+                    <h2>Decimal:</h2>
+                    <h3 id="decimal-value">0</h3>
+                    <h2>Binary:</h2>
+                    <h3 id="binary-value">00000000</h3>
+                    <h2>Octal:</h2>
+                    <h3 id="octal-value">000</h3>
+                </div>
+                            
+                <!-- Color Picker Section -->
+                <div class="color-picker">
+                    <div class="color-square" id="color-square"></div>
+                    <div class="slider">
+                        <label for="red-slider">Red:</label>
+                        <input type="range" min="0" max="255" value="160" class="slider" id="red-slider">
+                    </div>
+                    <div class="slider">
+                        <label for="green-slider">Green:</label>
+                        <input type="range" min="0" max="255" value="20" class="slider" id="green-slider">
+                    </div>
+                    <div class="slider">
+                        <label for="blue-slider">Blue:</label>
+                        <input type="range" min="0" max="255" value="255" class="slider" id="blue-slider">
+                    </div>
+                    <div class="hex-code" id="hex-code"></div>
+                </div>
+            
+                <!-- Color Channel Swapping Section -->
+                <div class="swapped-colors">
+                    <h2>Channel Swapped Colors:</h2>
+                    <div class="color-boxes">
+                        <div class="swapped-color-box" id="color-brg"></div>
+                        <div class="swapped-color-box" id="color-gbr"></div>
+                        <div class="swapped-color-box" id="color-grb"></div>
+                        <div class="swapped-color-box" id="color-bgr"></div>
+                        <div class="swapped-color-box" id="color-rbg"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary">
+                <h3 class="summary-h3">What are channel swapped colors?</h3>
+                <p>
+                    Channel swapped colors are colors that manipulate the RGB order 
+                    of your chosen color. On this site, 5 different combinations of 
+                    the colors you choose are shown, RBG, GRB, GBR, BRG, and BGR. 
+                    These colors could be vastly different or identical to your 
+                    chosen color based on how you make it.
+                </p>
+            </div>    
+            
+        </div>
+
+        <!-- Game Section -->
+        <div id="game" class="section">
+            <h3>Game</h3>
+            <p id="game-p">This is a simple game where you choose the color closest to yours. Enter your name to get your own unique color to play! Be careful, some colors may look closer to yours, but the RGB values may not necessarily be closer.</p>
+            <div id="name-entry">
+                <input type="text" id="user-name" placeholder="Enter your name">
+                <button id="start-game">Start Game</button>
+            </div>
+            <div id="game-content" style="display: none;">
+                <h3>Your Color:</h3>
+                <div id="user-color" class="color-square"></div>
+                <p id="user-hex" class="hex-code"></p>
+                <h3>Choose the closest color:</h3>
+                <div id="color-options" class="color-boxes">
+                    <div class="color-option-container">
+                        <div class="color-option" id="option-1"></div>
+                        <p id="option-1-hex" class="hex-code small-hex"></p>
+                    </div>
+                    <div class="color-option-container">
+                        <div class="color-option" id="option-2"></div>
+                        <p id="option-2-hex" class="hex-code small-hex"></p>
+                    </div>
+                    <div class="color-option-container">
+                        <div class="color-option" id="option-3"></div>
+                        <p id="option-3-hex" class="hex-code small-hex"></p>
+                    </div>
+                </div>
+                <h3 id="score">Score: 0</h3>
+                <button id="restart-game" style="display: none;">Restart</button>
+                <button id="return-to-name" style="display: none;">Return to Name Selection</button>
+            </div>
+        </div>
+                        
+        <!-- About Page -->
+        <div id="about" class="section">
+            <h3>About the Color Manipulator</h3>
+            <p>The Color Manipulator was an experimental color test that I wanted to 
+                conduct to see how different RGB values look and interact. I find 
+                the idea of channel swapped colors very interesting, as they could represent 
+                colors on complete different sides of the color wheel. Though they are 
+                not complimentary, some can make for very interesting color combinations. 
+                Exploring these interesting combinations is what this website is for.</p>
+
+                <h3 id="colorful-name">
+                    <span id="by">By: </span>
+                    <span id="name-part-1">Lu</span><span id="name-part-2">ke </span>
+                    <span id="name-part-3">Ba</span><span id="name-part-4">rc</span><span id="name-part-5">en</span><span id="name-part-6">as</span>
+                </h3>
+            
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="section">
+            <h3>My Links</h3>
+
+            <div class="icon-container">
+
+                <div class="icon-wrapper" id="github-icon">
+                    <a href="https://github.com/LukeBarcenas/LukeBarcenas.github.io" class="luke-externals" target="_blank">
+                            <img src="images/github.png" alt="Github Icon" class="icon">
+                    </a>
+                </div>
+                
+                <div class="icon-wrapper" id="linkedin-icon">
+                    <a href="https://www.linkedin.com/in/luke-barcenas/" class="luke-externals" target="_blank">
+                        <img src="images/linkedin.png" alt="Linkedin Icon" class="icon">
+                    </a>
+                </div>
+                
+                <div class="icon-wrapper" id="mail-icon">
+                    <a href="mailto:lukebarcenas930@gmail.com" class="luke-externals">
+                            <img src="images/mail.png" alt="Mail Icon" class="icon">
+                    </a>
+                </div>
+            </div>
+        </div>        
+
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
